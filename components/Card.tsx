@@ -3,18 +3,18 @@ import { Card } from "react-bootstrap";
 interface CardViewProps {
   item: {
     title: string;
-    content: string;
+    body: string;
   };
 }
 
 const CardView = (props: CardViewProps) => {
   const { item } = props;
-  const { title, content } = item;
+  const { title, body } = item;
   return (
     <Card>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>{content}</Card.Text>
+        <Card.Text>{body}</Card.Text>
       </Card.Body>
     </Card>
   );
