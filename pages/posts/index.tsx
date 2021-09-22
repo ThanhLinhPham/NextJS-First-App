@@ -12,8 +12,8 @@ const Posts = (props: any) => {
   const { posts } = props;
   return (
     <Layout>
-      {posts.map((item: any) => (
-        <CardView key={`post${item.id}`} item={item} />
+      {(posts || []).map((item: any) => (
+        <CardView key={`post${item?.id}`} item={item} />
       ))}
     </Layout>
   );
@@ -24,9 +24,11 @@ const Posts = (props: any) => {
 export const getStaticProps = async () => {
   const posts = await getPosts();
   return {
-    props: {
-      posts,
-    },
+    props: JSON.parse(
+      JSON.stringify({
+        posts,
+      })
+    ),
   };
 };
 
