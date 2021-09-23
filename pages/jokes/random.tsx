@@ -24,6 +24,18 @@ const Random = (props: any) => {
 // Du lieu phu thuoc vao request nhưng vẫn tạo ra HTML tĩnh cho FE
 export const getServerSideProps = async () => {
   const joke = await getRandomJoke();
+  // tra lai trang 404
+  // if (!joke) return { notFound: true };
+
+  // quay lai trang about
+  if (!joke)
+    return {
+      redirect: {
+        destination: "/about",
+        permanent: false,
+      },
+    };
+
   return {
     props: JSON.parse(
       JSON.stringify({

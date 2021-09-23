@@ -3,9 +3,12 @@ import axios from "axios";
 export const getPosts = async (limit: number) => {
   try {
     const response = await axios.get(
+      // `http://localhost:3000/api/posts`
       `https://jsonplaceholder.typicode.com/posts?_limit=${limit}`
     );
     const { data } = response;
+    // const { items } = data;
+    // console.log(items);
     return data;
   } catch (error) {
     console.log(error);

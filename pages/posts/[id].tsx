@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "react-bootstrap";
 import { useRouter } from "next/dist/client/router";
 import { Spinner } from "react-bootstrap";
+import spinnerStyles from "../../styles/Spinner.module.css";
 
 const Post = (props: any) => {
   const router = useRouter();
@@ -22,7 +23,12 @@ const Post = (props: any) => {
             justifyContent: "center",
           }}
         >
-          <Spinner animation="border" role="status" variant="dark">
+          <Spinner
+            animation="border"
+            role="status"
+            variant="dark"
+            className={spinnerStyles.spinnerLg}
+          >
             <span className="sr-only">Loading...</span>
           </Spinner>
         </div>
@@ -69,6 +75,7 @@ export const getStaticProps = async (props: any) => {
     props: {
       post,
     },
+    reValiadate: 1, // check xem có thay đổi database hay không để render lại html code, chỉ diễn ra 1 lần/ giây
   };
 };
 
