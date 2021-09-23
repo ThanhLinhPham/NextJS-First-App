@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Random = (props: any) => {
   const { joke } = props;
-//   const { value } = joke;
+  //   const { value } = joke;
   return (
     <Layout>
       <Card>

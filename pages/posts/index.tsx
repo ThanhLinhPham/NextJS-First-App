@@ -22,7 +22,7 @@ const Posts = (props: any) => {
 // Get static data from BE
 // Lấy dữ liệU tĩnh render ra html trước
 export const getStaticProps = async () => {
-  const posts = await getPosts();
+  const posts = await getPosts(10);
   return {
     props: JSON.parse(
       JSON.stringify({

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const getPosts = async () => {
+export const getPosts = async (limit: number) => {
   try {
     const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts?_limit=5"
+      `https://jsonplaceholder.typicode.com/posts?_limit=${limit}`
     );
     const { data } = response;
     return data;
@@ -12,8 +12,8 @@ export const getPosts = async () => {
   }
 };
 
-export const getPostIds = async () => {
-  const posts = await getPosts();
+export const getPostIds = async (limit: number) => {
+  const posts = await getPosts(limit);
   return posts.map((post: any) => ({ params: { id: `${post.id}` } }));
 };
 

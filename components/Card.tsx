@@ -15,7 +15,9 @@ const CardView = (props: CardViewProps) => {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>
+          {id}--{title}
+        </Card.Title>
         <Card.Text>{body}</Card.Text>
         <Link href={`/posts/${id}`} passHref>
           <Card.Link>See more</Card.Link>
