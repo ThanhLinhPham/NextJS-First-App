@@ -75,7 +75,7 @@ export const getStaticProps = async (props: any) => {
     props: {
       post,
     },
-    reValiadate: 1, // check xem có thay đổi database hay không để render lại html code, chỉ diễn ra 1 lần/ giây
+    reValidate: 1, // check xem có thay đổi database hay không để render lại html code, chỉ diễn ra 1 lần/ giây
   };
 };
 
